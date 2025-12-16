@@ -73,18 +73,18 @@ python train.py  --detr_model ./checkpoints/detr-r50-unc.pth --bert_enc_num 12 -
 ```
 
 ## Inference
-[Checkpoints](https://drive.google.com/drive/folders/1stGPq4Sz_Vu60QliUzey8m6iYXrrF3Ua?usp=drive_link)
+[Checkpoints](https://drive.google.com/drive/folders/1GAIWSJRE08fMAneag-n0h1LGfVe99TGU?usp=drive_link)
 
 ```shell
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 # refcocog-g
-python -m torch.distributed.launch --nproc_per_node=8 --use_env eval.py --model_type ResNet --batch_size 16 --backbone resnet50 --bert_enc_num 12 --detr_enc_num 6 --dataset gref --max_query_len 40 --output_dir outputs/refcocog_gsplit_r50 --stages 3 --vl_fusion_enc_layers 3 --uniform_learnable True --in_points 36 --lr 1e-4 --different_transformer True --lr_drop 60 --vl_dec_layers 1 --vl_enc_layers 1 --eval_model outputs/refcocog_gsplit_r50/best_checkpoint.pth --eval_set val
+python eval.py --model_type ResNet  --dataset gref --max_query_len 40 --output_dir outputs/refcocog_gsplit_r50 --stages 3  --eval_model outputs/refcocog_gsplit_r50/best_checkpoint.pth --eval_set val
 ```
 
 
 
 ## Acknowledgments
-This project is built upon [Dyanmic MDETR](https://github.com/djiajunustc/TransVG). Thanks for their wonderful work!
+This project is built upon [Dyanmic MDETR]([https://github.com/djiajunustc/](https://github.com/MCG-NJU/Dynamic-MDETR)). Thanks for their wonderful work!
 
 ## Contact
 
