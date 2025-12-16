@@ -1,4 +1,4 @@
-是不是保留这些就够了？torch==2.2.2
+torch==2.2.2
 torchvision==0.17.2
 torchaudio==2.2.2
 transformers==4.52.4
